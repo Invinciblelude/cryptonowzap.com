@@ -70,11 +70,19 @@ a {
   gap: 12px;
 }
 
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 32px;
+  align-items: start;
+}
+
 .hero-content {
   max-width: 640px;
   position: relative;
   z-index: 1;
 }
+
 
 .eyebrow {
   color: var(--accent);
@@ -345,6 +353,16 @@ h1 {
   .nav {
     flex-direction: column;
     gap: 16px;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-visual {
+    position: static;
+    width: 100%;
+    margin-top: 24px;
   }
 
   .hero-actions {
