@@ -365,10 +365,24 @@
 <body>
 
   <div class="music-bar" id="musicBar">
-    <button onclick="document.getElementById('bgMusic').paused ? document.getElementById('bgMusic').play() : document.getElementById('bgMusic').pause(); this.textContent = document.getElementById('bgMusic').paused ? '♫ Play' : '♫ Pause'">♫ Play</button>
+    <button id="musicBtn" onclick="toggleMusic()">♫ Pause</button>
     <span>Baccarat Face – MD</span>
   </div>
-  <audio id="bgMusic" loop preload="auto" src="music.mp3"></audio>
+  <audio id="bgMusic" loop preload="auto" src="music-short.mp3"></audio>
+  <script>
+    function toggleMusic() {
+      var a = document.getElementById('bgMusic');
+      var b = document.getElementById('musicBtn');
+      if (a.paused) { a.play(); b.textContent = '♫ Pause'; }
+      else { a.pause(); b.textContent = '♫ Play'; }
+    }
+    document.addEventListener('click', function init() {
+      var a = document.getElementById('bgMusic');
+      a.play().catch(function(){});
+      document.getElementById('musicBtn').textContent = '♫ Pause';
+      document.removeEventListener('click', init);
+    });
+  </script>
 
   <header class="hero">
     <nav class="nav">
