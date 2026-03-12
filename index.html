@@ -323,6 +323,38 @@
       background-position: center;
     }
 
+    .music-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 999;
+      background: rgba(10,10,11,0.92);
+      border-top: 1px solid rgba(241,212,138,0.25);
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      backdrop-filter: blur(10px);
+    }
+
+    .music-bar button {
+      background: #d7b36a;
+      color: #0a0a0b;
+      border: none;
+      padding: 6px 16px;
+      border-radius: 999px;
+      font-weight: 700;
+      cursor: pointer;
+      font-size: 0.85rem;
+    }
+
+    .music-bar span {
+      color: #c2bba8;
+      font-size: 0.85rem;
+      flex: 1;
+    }
+
     @media (max-width: 700px) {
       .hero-grid { grid-template-columns: 1fr; }
       .hero-btns { flex-direction: column; }
@@ -333,6 +365,48 @@
 </head>
 <body>
 
+  <div class="music-bar">
+    <button id="playBtn" onclick="togglePlay()">♫ Play</button>
+    <span id="trackName">Crypto now, Zap in – Vince Dang (Verse)</span>
+    <button id="fullBtn" onclick="playFull()">Full Track</button>
+  </div>
+  <audio id="bgMusic" loop preload="auto" src="verse.mp3"></audio>
+  <script>
+    var music = document.getElementById('bgMusic');
+    var playBtn = document.getElementById('playBtn');
+    var fullBtn = document.getElementById('fullBtn');
+    var trackName = document.getElementById('trackName');
+    var isFull = false;
+
+    function togglePlay() {
+      if (music.paused) { music.play(); playBtn.textContent = '♫ Pause'; }
+      else { music.pause(); playBtn.textContent = '♫ Play'; }
+    }
+
+    function playFull() {
+      if (!isFull) {
+        var t = !music.paused;
+        music.src = 'full-track.mp3';
+        if (t) music.play();
+        trackName.textContent = 'Crypto now, Zap in – Vince Dang (Full)';
+        fullBtn.textContent = 'Verse';
+        isFull = true;
+      } else {
+        var t = !music.paused;
+        music.src = 'verse.mp3';
+        if (t) music.play();
+        trackName.textContent = 'Crypto now, Zap in – Vince Dang (Verse)';
+        fullBtn.textContent = 'Full Track';
+        isFull = false;
+      }
+    }
+
+    document.addEventListener('click', function init() {
+      music.play().catch(function(){});
+      playBtn.textContent = '♫ Pause';
+      document.removeEventListener('click', init);
+    });
+  </script>
 
   <header class="hero">
     <nav class="nav">
