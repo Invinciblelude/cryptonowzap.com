@@ -1,513 +1,539 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>CryptoNowZap | Crypto Wallet Coaching</title>
-    <meta
-      name="description"
-      content="Crypto wallet coaching for beginners and businesses. Set up a wallet safely, learn how to send and receive, and make your first crypto payment."
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Space+Grotesk:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <header class="hero">
-      <nav class="nav">
-        <div class="logo">CryptoNowZap</div>
-        <div class="nav-actions">
-          <a class="btn btn-outline" href="#start">Start Here</a>
-          <a class="btn btn-outline" href="#wallets">Wallets</a>
-        </div>
-      </nav>
-      <div class="hero-grid">
-        <div class="hero-content">
-          <p class="eyebrow">Crypto Wallet Coaching</p>
-          <h1>Get your first crypto wallet set up the right way.</h1>
-          <p class="subhead">
-            Live, step-by-step help for beginners and small businesses. No stress,
-            no guessing, no risky shortcuts.
-          </p>
-          <p class="tagline">
-            Privacy in the 21st century: secure, fast, global.
-          </p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="tel:19164082256">Call Now</a>
-            <a class="btn btn-secondary" href="mailto:VinceDang@thenetwork20.com">Email</a>
-          </div>
-        </div>
-        </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CryptoNowZap | Crypto Wallet Coaching</title>
+  <meta name="description" content="Crypto wallet coaching for beginners and businesses." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Space Grotesk', system-ui, sans-serif;
+      background: #0a0a0b;
+      color: #f5f1e6;
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* ===== HERO ===== */
+    .hero {
+      padding: 28px 6vw 60px;
+      background:
+        linear-gradient(180deg, rgba(10,10,11,0.5), rgba(10,10,11,0.65)),
+        url('https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=1400&q=80');
+      background-size: cover;
+      background-position: center;
+      min-height: 100vh;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 40px;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #f1d48a;
+    }
+
+    .nav-links { display: flex; gap: 10px; }
+
+    .nav-links a {
+      border: 1px solid rgba(255,255,255,0.15);
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 36px;
+      align-items: start;
+    }
+
+    .badges { display: flex; gap: 8px; margin-bottom: 14px; }
+
+    .badge {
+      background: rgba(241,212,138,0.18);
+      border: 1px solid rgba(241,212,138,0.45);
+      color: #f1d48a;
+      padding: 5px 12px;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      font-weight: 600;
+    }
+
+    .badge-outline {
+      background: transparent;
+      border-color: rgba(255,255,255,0.2);
+      color: #f5f1e6;
+    }
+
+    .eyebrow {
+      color: #f1d48a;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-weight: 600;
+      font-size: 0.8rem;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(2rem, 3vw, 3.2rem);
+      line-height: 1.2;
+      margin-bottom: 14px;
+    }
+
+    .subhead { color: #c2bba8; margin-bottom: 10px; }
+
+    .tagline { color: #f1d48a; font-weight: 600; margin-bottom: 20px; }
+
+    .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+
+    .btn-gold {
+      background: #d7b36a;
+      color: #0a0a0b;
+      padding: 12px 24px;
+      border-radius: 999px;
+      font-weight: 700;
+    }
+
+    .btn-ghost {
+      border: 1px solid rgba(255,255,255,0.15);
+      padding: 12px 24px;
+      border-radius: 999px;
+      font-weight: 600;
+    }
+
+    .metrics { display: flex; gap: 20px; margin-top: 22px; }
+    .metrics strong { color: #f1d48a; display: block; font-size: 1.1rem; }
+    .metrics span { color: #c2bba8; font-size: 0.85rem; }
+
+    .hero-right { z-index: 1; }
+
+    .ticker-box {
+      background: rgba(14,14,17,0.8);
+      border: 1px solid rgba(241,212,138,0.25);
+      border-radius: 20px;
+      padding: 14px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    }
+
+    .ticker-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #f1d48a;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .ticker-box iframe {
+      width: 100%;
+      height: 120px;
+      border: 0;
+      border-radius: 10px;
+      background: #0a0a0b;
+      margin-bottom: 6px;
+    }
+
+    /* ===== SECTIONS ===== */
+    .sec { padding: 64px 6vw; }
+
+    .sec-dark {
+      background:
+        linear-gradient(180deg, rgba(12,12,15,0.55), rgba(12,12,15,0.7)),
+        url('https://images.unsplash.com/photo-1642104704074-907c0698b98d?w=1400&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .sec-photo {
+      background:
+        linear-gradient(180deg, rgba(10,10,11,0.5), rgba(10,10,11,0.65)),
+        url('https://images.unsplash.com/photo-1622630998477-20aa696ecb05?w=1400&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .sec h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.8rem;
+      margin-bottom: 8px;
+    }
+
+    .sec .sub { color: #c2bba8; margin-bottom: 28px; }
+
+    .grid3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+
+    .grid4 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      background: rgba(20,20,23,0.85);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 16px;
+      padding: 20px;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(241,212,138,0.4);
+    }
+
+    .card h3 { margin-bottom: 6px; font-size: 1rem; }
+    .card p { color: #c2bba8; font-size: 0.92rem; }
+
+    .card-glow {
+      background:
+        linear-gradient(140deg, rgba(20,20,23,0.5), rgba(12,12,14,0.6)),
+        url('https://images.unsplash.com/photo-1620321023374-d1a68fbc720d?w=600&q=80');
+      background-size: cover;
+      background-position: center;
+      border-color: rgba(241,212,138,0.25);
+    }
+
+    .card-img {
+      background:
+        linear-gradient(140deg, rgba(20,20,23,0.45), rgba(12,12,14,0.55)),
+        url('https://images.unsplash.com/photo-1518546305927-5a555bb7020d?w=600&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .price { font-size: 2rem; font-weight: 700; margin: 8px 0 4px; }
+    .muted { color: #c2bba8; }
+
+    .featured {
+      border-color: rgba(241,212,138,0.5);
+      background: linear-gradient(145deg, rgba(25,23,15,0.85), rgba(20,20,23,0.85));
+    }
+
+    .chips { display: flex; flex-wrap: wrap; gap: 10px; }
+
+    .chips span {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-weight: 600;
+    }
+
+    .check-list { list-style: none; display: grid; gap: 10px; }
+    .check-list li::before { content: "✔ "; color: #f1d48a; }
+
+    .market-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+    }
+
+    .market-grid iframe {
+      width: 100%;
+      height: 200px;
+      border: 0;
+      border-radius: 12px;
+      background: #0a0a0b;
+      margin: 10px 0 8px;
+    }
+
+    .link { color: #f1d48a; font-weight: 600; }
+
+    .faq details {
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 14px;
+      padding: 14px 16px;
+      margin-bottom: 10px;
+      background: rgba(20,20,23,0.85);
+    }
+
+    .faq summary { cursor: pointer; font-weight: 600; }
+
+    .step-num {
+      display: inline-block;
+      background: #d7b36a;
+      color: #0a0a0b;
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 32px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .footer {
+      padding: 32px 6vw 40px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      background:
+        linear-gradient(180deg, rgba(10,10,11,0.55), rgba(10,10,11,0.7)),
+        url('https://images.unsplash.com/photo-1518546305927-5a555bb7020d?w=1400&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .footer p { color: #c2bba8; }
+    .footer strong { color: #f5f1e6; }
+
+    .center { text-align: center; margin-top: 18px; }
+
+    .booking { text-align: center; }
+
+    .compare {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+    }
+
+    .compare ul { margin-top: 10px; padding-left: 16px; }
+    .compare li { margin-bottom: 6px; color: #c2bba8; }
+
+    .sec-photo2 {
+      background:
+        linear-gradient(180deg, rgba(10,10,11,0.5), rgba(10,10,11,0.65)),
+        url('https://images.unsplash.com/photo-1620321023374-d1a68fbc720d?w=1400&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .sec-photo3 {
+      background:
+        linear-gradient(180deg, rgba(10,10,11,0.5), rgba(10,10,11,0.65)),
+        url('https://images.unsplash.com/photo-1518546305927-5a555bb7020d?w=1400&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+
+    @media (max-width: 700px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-btns { flex-direction: column; }
+      .btn-gold, .btn-ghost { width: 100%; text-align: center; }
+      .nav { flex-direction: column; gap: 12px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero">
+    <nav class="nav">
+      <div class="logo">CryptoNowZap</div>
+      <div class="nav-links">
+        <a href="#start">Start Here</a>
+        <a href="#wallets">Wallets</a>
+        <a href="#market">Market</a>
       </div>
-    </header>
-
-    <main>
-      <section class="section" id="start">
-        <div class="section-header">
-          <h2>Start here</h2>
-          <p>Everything you need to get into crypto wallets with confidence.</p>
-        </div>
-        <div class="cards">
-          <div class="card">
-            <h3>Beginner setup</h3>
-            <p>Install a wallet, secure your seed phrase, and learn the basics.</p>
-          </div>
-          <div class="card">
-            <h3>First send/receive</h3>
-            <p>Make your first transaction with a test send and a safety check.</p>
-          </div>
-          <div class="card">
-            <h3>Small business ready</h3>
-            <p>Learn how to accept crypto payments and cash out safely.</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="wallets">
-        <div class="section-header">
-          <h2>Popular wallets (examples)</h2>
-          <p>
-            These are commonly used wallets. I can help you pick the right one
-            for your needs.
-          </p>
-        </div>
-        <div class="cards">
-          <div class="card">
-            <h3>Phantom</h3>
-            <p>Fast, simple wallet used by many Solana users.</p>
-          </div>
-          <div class="card">
-            <h3>Trust Wallet</h3>
-            <p>Multi-chain wallet with a beginner-friendly mobile app.</p>
-          </div>
-          <div class="card">
-            <h3>Exodus</h3>
-            <p>Clean design and easy onboarding for new users.</p>
-          </div>
-          <div class="card">
-            <h3>MetaMask</h3>
-            <p>Most widely used wallet for Ethereum and EVM chains.</p>
-          </div>
-          <div class="card">
-            <h3>Ledger (hardware)</h3>
-            <p>Offline storage for higher security.</p>
-          </div>
-          <div class="card">
-            <h3>Trezor (hardware)</h3>
-            <p>Trusted hardware wallet for long-term holdings.</p>
-          </div>
-        </div>
-        <p class="center muted">
-          Not endorsements. We review what fits your situation.
-        </p>
-      </section>
-
-      <section class="section alt" id="what">
-        <div class="section-header">
-          <h2>What you get</h2>
-          <p>Clear steps, real results, and a wallet that actually works.</p>
-        </div>
-        <ul class="checklist">
-          <li>1-on-1 screen-share or in-person session</li>
-          <li>Wallet setup and security basics (seed phrase, backups)</li>
-          <li>Test transaction so you see it work</li>
-          <li>Payments walkthrough if you want to accept crypto</li>
-          <li>Simple swaps overview if requested</li>
-          <li>Follow-up notes so you can repeat it on your own</li>
-          <li>Clear boundaries: you control all keys and transactions</li>
-        </ul>
-      </section>
-
-      <section class="section" id="packages">
-        <div class="section-header">
-          <h2>Packages</h2>
-          <p>Pick the right level for where you are now.</p>
-        </div>
-        <div class="cards pricing">
-          <div class="card">
-            <h3>Wallet Starter</h3>
-            <p class="price">$99</p>
-            <p class="muted">45 minutes</p>
-            <ul>
-              <li>Wallet setup and security</li>
-              <li>First test send/receive</li>
-              <li>Quick Q&amp;A</li>
-            </ul>
-            <a class="btn btn-primary" href="tel:19164082256">Call Now</a>
-          </div>
-          <div class="card featured">
-            <h3>Payments Everyday</h3>
-            <p class="price">$149</p>
-            <p class="muted">60 minutes</p>
-            <ul>
-              <li>Everything in Starter</li>
-              <li>Payments walkthrough</li>
-              <li>Cash-out basics</li>
-            </ul>
-            <a class="btn btn-primary" href="tel:19164082256">Call Now</a>
-          </div>
-          <div class="card">
-            <h3>DEX Pro</h3>
-            <p class="price">$249</p>
-            <p class="muted">90 minutes</p>
-            <ul>
-              <li>Everything in Payments</li>
-              <li>DEX swaps with safety checks</li>
-              <li>Risk basics</li>
-            </ul>
-            <a class="btn btn-primary" href="tel:19164082256">Call Now</a>
-          </div>
-        </div>
-      </section>
-
-      <section class="section alt" id="steps">
-        <div class="section-header">
-          <h2>3-step onboarding</h2>
-          <p>Fast, clear, and built for beginners.</p>
-        </div>
-        <div class="steps">
-          <div class="step">
-            <span class="step-number">1</span>
-            <p>Install your wallet and secure your seed phrase.</p>
-          </div>
-          <div class="step">
-            <span class="step-number">2</span>
-            <p>Send a test transaction and verify it on-chain.</p>
-          </div>
-          <div class="step">
-            <span class="step-number">3</span>
-            <p>Learn how to receive payments and cash out safely.</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="section alt" id="use-cases">
-        <div class="section-header">
-          <h2>When crypto is actually useful</h2>
-          <p>Real-world cases where wallets make sense.</p>
-        </div>
-        <div class="cards">
-          <div class="card">
-            <h3>International transfers</h3>
-            <p>Send to family or freelancers abroad in minutes, 24/7.</p>
-          </div>
-          <div class="card">
-            <h3>After-hours payments</h3>
-            <p>Bank apps go down. Crypto doesn’t.</p>
-          </div>
-          <div class="card">
-            <h3>Self-custody control</h3>
-            <p>You hold your own keys. No third-party holds.</p>
-          </div>
-          <div class="card">
-            <h3>Small business payments</h3>
-            <p>Reduce card fees and avoid chargebacks on large tickets.</p>
-          </div>
-          <div class="card">
-            <h3>Micro-payments</h3>
-            <p>Low fees for small transfers and tips.</p>
-          </div>
-          <div class="card">
-            <h3>Emergency access</h3>
-            <p>Bank locked? You still have wallet access.</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="section alt" id="top-crypto">
-        <div class="section-header">
-          <h2>Commonly used crypto (examples)</h2>
-          <p>These are examples people often ask about in coaching sessions.</p>
-        </div>
-        <div class="chips">
-          <span>BTC</span>
-          <span>ETH</span>
-          <span>USDC</span>
-          <span>SOL</span>
-          <span>XRP</span>
-          <span>LTC</span>
-          <span>ADA</span>
-          <span>AVAX</span>
-        </div>
-        <p class="center muted">
-          Educational only. No investment advice or endorsements.
-        </p>
-      </section>
-
-      <section class="section" id="market">
-        <div class="section-header">
-          <h2>Live crypto market</h2>
-          <p>Quick view of major coins with live links to full charts.</p>
-        </div>
-        <div class="cards market-cards">
-          <div class="card">
-            <h3>Bitcoin (BTC)</h3>
-            <iframe
-              src="https://s.tradingview.com/widgetembed/?symbol=BITSTAMP%3ABTCUSD&interval=60&hidesidetoolbar=1&symboledit=1&saveimage=0&toolbarbg=111114&studies=&hideideas=1&theme=dark"
-              title="BTCUSD chart"
-              loading="lazy"
-            ></iframe>
-            <a
-              class="link"
-              href="https://www.tradingview.com/symbols/BTCUSD/"
-              target="_blank"
-              rel="noreferrer noopener"
-              >Open full chart</a
-            >
-          </div>
-          <div class="card">
-            <h3>Ethereum (ETH)</h3>
-            <iframe
-              src="https://s.tradingview.com/widgetembed/?symbol=BITSTAMP%3AETHUSD&interval=60&hidesidetoolbar=1&symboledit=1&saveimage=0&toolbarbg=111114&studies=&hideideas=1&theme=dark"
-              title="ETHUSD chart"
-              loading="lazy"
-            ></iframe>
-            <a
-              class="link"
-              href="https://www.tradingview.com/symbols/ETHUSD/"
-              target="_blank"
-              rel="noreferrer noopener"
-              >Open full chart</a
-            >
-          </div>
-          <div class="card">
-            <h3>Solana (SOL)</h3>
-            <iframe
-              src="https://s.tradingview.com/widgetembed/?symbol=COINBASE%3ASOLUSD&interval=60&hidesidetoolbar=1&symboledit=1&saveimage=0&toolbarbg=111114&studies=&hideideas=1&theme=dark"
-              title="SOLUSD chart"
-              loading="lazy"
-            ></iframe>
-            <a
-              class="link"
-              href="https://www.tradingview.com/symbols/SOLUSD/"
-              target="_blank"
-              rel="noreferrer noopener"
-              >Open full chart</a
-            >
-          </div>
-          <div class="card">
-            <h3>XRP</h3>
-            <iframe
-              src="https://s.tradingview.com/widgetembed/?symbol=BITSTAMP%3AXRPUSD&interval=60&hidesidetoolbar=1&symboledit=1&saveimage=0&toolbarbg=111114&studies=&hideideas=1&theme=dark"
-              title="XRPUSD chart"
-              loading="lazy"
-            ></iframe>
-            <a
-              class="link"
-              href="https://www.tradingview.com/symbols/XRPUSD/"
-              target="_blank"
-              rel="noreferrer noopener"
-              >Open full chart</a
-            >
-          </div>
-        </div>
-        <p class="center muted">
-          Charts by TradingView. Live data and links for quick reference.
-        </p>
-      </section>
-
-      <section class="section" id="comparison">
-        <div class="section-header">
-          <h2>Crypto vs Cash App/Zelle</h2>
-          <p>Not “better for everything” — better for these specific needs.</p>
-        </div>
-        <div class="comparison">
-          <div class="card">
-            <h3>Cash App / Zelle</h3>
-            <ul>
-              <li>Easy and familiar</li>
-              <li>U.S.-only, bank-limited</li>
-              <li>Custodial balance</li>
-              <li>Accounts can be frozen</li>
-            </ul>
-          </div>
-          <div class="card">
-            <h3>Self-custody wallet</h3>
-            <ul>
-              <li>Global, 24/7 access</li>
-              <li>You hold your keys</li>
-              <li>No chargebacks</li>
-              <li>Low network fees</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section class="section alt" id="daily-help">
-        <div class="section-header">
-          <h2>How I help people daily</h2>
-          <p>Simple, consistent support that builds confidence fast.</p>
-        </div>
-        <div class="steps">
-          <div class="step">
-            <span class="step-number">1</span>
-            <p>Short daily tips on wallet safety and payments.</p>
-          </div>
-          <div class="step">
-            <span class="step-number">2</span>
-            <p>Live fixes for common wallet errors.</p>
-          </div>
-          <div class="step">
-            <span class="step-number">3</span>
-            <p>Clear next steps so you can repeat it yourself.</p>
-          </div>
-        </div>
-        <div class="section-header">
-          <p class="muted">
-            Want daily support? Ask about monthly coaching.
-          </p>
-        </div>
-      </section>
-
-      <section class="section alt" id="how">
-        <div class="section-header">
-          <h2>How it works</h2>
-        </div>
-        <div class="steps">
-          <div class="step">
-            <span class="step-number">1</span>
-            <p>Call or email to pick the right package.</p>
-          </div>
-          <div class="step">
-            <span class="step-number">2</span>
-            <p>We meet on Zoom (or in person if local) and do it together.</p>
-          </div>
-          <div class="step">
-            <span class="step-number">3</span>
-            <p>You leave with a working wallet and your first transaction done.</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="social-proof">
-        <div class="section-header">
-          <h2>Results</h2>
-          <p>Real outcomes for everyday people.</p>
-        </div>
-        <div class="cards">
-          <div class="card">
-            <p class="quote">
-              "Got my Phantom wallet set up in under an hour and felt safe doing
-              it."
-            </p>
-            <p class="muted">- Client, Sacramento</p>
-          </div>
-          <div class="card">
-            <p class="quote">
-              "I was stuck for weeks. We fixed my issue in 20 minutes."
-            </p>
-            <p class="muted">- Client, Davis</p>
-          </div>
-          <div class="card">
-            <p class="quote">
-              "Now I can accept crypto at my store and cash out the same day."
-            </p>
-            <p class="muted">- Small Business Owner</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="section alt" id="faq">
-        <div class="section-header">
-          <h2>FAQ</h2>
-        </div>
-        <div class="faq">
-          <details>
-            <summary>Why pay when YouTube is free?</summary>
-            <p>
-              YouTube explains concepts. I guide you live, on your device, so you
-              finish the setup with confidence.
-            </p>
-          </details>
-          <details>
-            <summary>Is this investment advice?</summary>
-            <p>
-              No. This is education and technical setup only. You keep full
-              control of your wallet and funds.
-            </p>
-          </details>
-          <details>
-            <summary>Do you ever hold my crypto?</summary>
-            <p>
-              Never. I do not take custody or manage funds. You stay in control.
-            </p>
-          </details>
-          <details>
-            <summary>Is this legal?</summary>
-            <p>
-              Yes. You execute all transactions yourself. I do not access,
-              control, or transmit your funds.
-            </p>
-          </details>
-          <details>
-            <summary>What if I need help later?</summary>
-            <p>
-              I provide follow-up notes and can book another session if needed.
-            </p>
-          </details>
-        </div>
-      </section>
-
-      <section class="section" id="contact">
-        <div class="section-header">
-          <h2>Contact</h2>
-          <p>Call or email for a quick response.</p>
-        </div>
-        <div class="cards booking">
-          <div class="card">
-            <h3>Wallet Starter</h3>
-            <p class="price">$99</p>
-            <a
-              class="btn btn-primary"
-              href="tel:19164082256"
-            >
-              Call Now
-            </a>
-          </div>
-          <div class="card">
-            <h3>Payments Everyday</h3>
-            <p class="price">$149</p>
-            <a
-              class="btn btn-primary"
-              href="mailto:VinceDang@thenetwork20.com"
-            >
-              Email
-            </a>
-          </div>
-          <div class="card">
-            <h3>DEX Pro</h3>
-            <p class="price">$249</p>
-            <a
-              class="btn btn-primary"
-              href="tel:19164082256"
-            >
-              Call Now
-            </a>
-          </div>
-        </div>
-        <p class="center muted">
-          Prefer to book time first? Call or email for a quick response:
-          <a href="tel:19164082256">916-408-2256</a> or
-          <a href="mailto:VinceDang@thenetwork20.com"
-            >VinceDang@thenetwork20.com</a
-          >
-        </p>
-      </section>
-    </main>
-
-    <footer class="footer">
+    </nav>
+    <div class="hero-grid">
       <div>
-        <p><strong>CryptoNowZap</strong> | Crypto Wallet Coaching</p>
-        <p>Contact: VinceDang@thenetwork20.com | 916-408-2256</p>
+        <div class="badges">
+          <span class="badge">Secure Wallet Setup</span>
+          <span class="badge badge-outline">Private • Fast • Global</span>
+        </div>
+        <p class="eyebrow">Crypto Wallet Coaching</p>
+        <h1>Get your first crypto wallet set up the right way.</h1>
+        <p class="subhead">Live, step-by-step help for beginners and small businesses. No stress, no guessing, no risky shortcuts.</p>
+        <p class="tagline">Privacy in the 21st century: secure, fast, global.</p>
+        <div class="hero-btns">
+          <a class="btn-gold" href="tel:19164082256">Call Now</a>
+          <a class="btn-ghost" href="mailto:VinceDang@thenetwork20.com">Email</a>
+        </div>
+        <div class="metrics">
+          <div><strong>1 Hour</strong><span>Wallet setup</span></div>
+          <div><strong>Live</strong><span>Screen-share</span></div>
+          <div><strong>Zero</strong><span>Custody by coach</span></div>
+        </div>
       </div>
-      <p class="disclaimer">
-        Disclaimer: Educational services only. No investment advice, no custody,
-        no guarantees. You control your wallet and assets at all times.
-      </p>
-    </footer>
-  </body>
+      <div class="hero-right">
+        <div class="ticker-box">
+          <div class="ticker-label">Live Market</div>
+          <iframe src="https://s.tradingview.com/widgetembed/?symbol=BITSTAMP%3ABTCUSD&interval=60&hidesidetoolbar=1&symboledit=0&saveimage=0&toolbarbg=111114&studies=&hideideas=1&theme=dark&style=1" title="BTC"></iframe>
+          <iframe src="https://s.tradingview.com/widgetembed/?symbol=BITSTAMP%3AETHUSD&interval=60&hidesidetoolbar=1&symboledit=0&saveimage=0&toolbarbg=111114&studies=&hideideas=1&theme=dark&style=1" title="ETH"></iframe>
+          <iframe src="https://s.tradingview.com/widgetembed/?symbol=COINBASE%3ASOLUSD&interval=60&hidesidetoolbar=1&symboledit=0&saveimage=0&toolbarbg=111114&studies=&hideideas=1&theme=dark&style=1" title="SOL"></iframe>
+          <iframe src="https://s.tradingview.com/widgetembed/?symbol=BITSTAMP%3AXRPUSD&interval=60&hidesidetoolbar=1&symboledit=0&saveimage=0&toolbarbg=111114&studies=&hideideas=1&theme=dark&style=1" title="XRP"></iframe>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="sec sec-dark" id="trust">
+      <h2>Why people choose CryptoNowZap</h2>
+      <p class="sub">Clear steps, modern tools, and a security-first approach.</p>
+      <div class="grid3">
+        <div class="card card-glow"><h3>Security-first setup</h3><p>Seed phrase safety, backups, and device protection done right.</p></div>
+        <div class="card card-glow"><h3>Modern wallets</h3><p>Learn the top wallets and pick what fits your daily needs.</p></div>
+        <div class="card card-glow"><h3>Real results fast</h3><p>Finish with a working wallet and your first transaction done.</p></div>
+      </div>
+    </section>
+
+    <section class="sec sec-photo" id="learning">
+      <h2>Learn digital transactions</h2>
+      <p class="sub">We make crypto payments feel simple, safe, and repeatable.</p>
+      <div class="grid4">
+        <div class="card card-img"><h3>1. Create a wallet</h3><p>Install, back up your seed phrase, and lock it down.</p></div>
+        <div class="card card-img"><h3>2. Send a test</h3><p>Verify the network and send a small amount first.</p></div>
+        <div class="card card-img"><h3>3. Receive securely</h3><p>Share the right address and confirm the transaction.</p></div>
+        <div class="card card-img"><h3>4. Make a payment</h3><p>Pay with QR codes and confirm settlement in minutes.</p></div>
+      </div>
+    </section>
+
+    <section class="sec sec-photo2" id="start">
+      <h2>Start here</h2>
+      <p class="sub">Everything you need to get into crypto wallets with confidence.</p>
+      <div class="grid3">
+        <div class="card"><h3>Beginner setup</h3><p>Install a wallet, secure your seed phrase, and learn the basics.</p></div>
+        <div class="card"><h3>First send/receive</h3><p>Make your first transaction with a test send and a safety check.</p></div>
+        <div class="card"><h3>Small business ready</h3><p>Learn how to accept crypto payments and cash out safely.</p></div>
+      </div>
+    </section>
+
+    <section class="sec sec-dark" id="wallets">
+      <h2>Popular wallets</h2>
+      <p class="sub">These are commonly used wallets. I can help you pick the right one.</p>
+      <div class="grid3">
+        <div class="card"><h3>Phantom</h3><p>Fast, simple wallet for Solana users.</p></div>
+        <div class="card"><h3>Trust Wallet</h3><p>Multi-chain, beginner-friendly mobile app.</p></div>
+        <div class="card"><h3>Exodus</h3><p>Clean design and easy onboarding.</p></div>
+        <div class="card"><h3>MetaMask</h3><p>Most widely used for Ethereum and EVM.</p></div>
+        <div class="card"><h3>Ledger</h3><p>Hardware wallet for offline security.</p></div>
+        <div class="card"><h3>Trezor</h3><p>Trusted hardware wallet for long-term.</p></div>
+      </div>
+      <p class="center muted">Not endorsements. We review what fits your situation.</p>
+    </section>
+
+    <section class="sec sec-photo3">
+      <h2>What you get</h2>
+      <p class="sub">Clear steps, real results, and a wallet that actually works.</p>
+      <ul class="check-list">
+        <li>1-on-1 screen-share or in-person session</li>
+        <li>Wallet setup and security basics</li>
+        <li>Test transaction so you see it work</li>
+        <li>Payments walkthrough if you want to accept crypto</li>
+        <li>Follow-up notes so you can repeat it on your own</li>
+        <li>You control all keys and transactions</li>
+      </ul>
+    </section>
+
+    <section class="sec sec-dark">
+      <h2>Packages</h2>
+      <p class="sub">Pick the right level for where you are now.</p>
+      <div class="grid3">
+        <div class="card">
+          <h3>Wallet Starter</h3>
+          <p class="price">$99</p>
+          <p class="muted">45 minutes</p>
+          <ul><li>Wallet setup and security</li><li>First test send/receive</li><li>Quick Q&amp;A</li></ul>
+          <a class="btn-gold" href="tel:19164082256">Call Now</a>
+        </div>
+        <div class="card featured">
+          <h3>Payments Everyday</h3>
+          <p class="price">$149</p>
+          <p class="muted">60 minutes</p>
+          <ul><li>Everything in Starter</li><li>Payments walkthrough</li><li>Cash-out basics</li></ul>
+          <a class="btn-gold" href="tel:19164082256">Call Now</a>
+        </div>
+        <div class="card">
+          <h3>DEX Pro</h3>
+          <p class="price">$249</p>
+          <p class="muted">90 minutes</p>
+          <ul><li>Everything in Payments</li><li>DEX swaps with safety checks</li><li>Risk basics</li></ul>
+          <a class="btn-gold" href="tel:19164082256">Call Now</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec sec-photo">
+      <h2>When crypto is actually useful</h2>
+      <p class="sub">Real-world cases where wallets make sense.</p>
+      <div class="grid3">
+        <div class="card"><h3>International transfers</h3><p>Send to family abroad in minutes, 24/7.</p></div>
+        <div class="card"><h3>After-hours payments</h3><p>Bank apps go down. Crypto doesn't.</p></div>
+        <div class="card"><h3>Self-custody control</h3><p>You hold your own keys.</p></div>
+        <div class="card"><h3>Small business payments</h3><p>Reduce card fees and avoid chargebacks.</p></div>
+        <div class="card"><h3>Micro-payments</h3><p>Low fees for small transfers and tips.</p></div>
+        <div class="card"><h3>Emergency access</h3><p>Bank locked? You still have wallet access.</p></div>
+      </div>
+    </section>
+
+    <section class="sec sec-dark">
+      <h2>Commonly used crypto</h2>
+      <p class="sub">Examples people ask about in coaching sessions.</p>
+      <div class="chips">
+        <span>BTC</span><span>ETH</span><span>USDC</span><span>SOL</span>
+        <span>XRP</span><span>LTC</span><span>ADA</span><span>AVAX</span>
+      </div>
+      <p class="center muted">Educational only. No investment advice or endorsements.</p>
+    </section>
+
+
+    <section class="sec sec-photo">
+      <h2>Crypto vs Cash App / Zelle</h2>
+      <p class="sub">Not "better for everything" — better for these specific needs.</p>
+      <div class="compare">
+        <div class="card"><h3>Cash App / Zelle</h3><ul><li>Easy and familiar</li><li>U.S.-only, bank-limited</li><li>Custodial balance</li><li>Accounts can be frozen</li></ul></div>
+        <div class="card"><h3>Self-custody wallet</h3><ul><li>Global, 24/7 access</li><li>You hold your keys</li><li>No chargebacks</li><li>Low network fees</li></ul></div>
+      </div>
+    </section>
+
+    <section class="sec sec-photo2">
+      <h2>Results</h2>
+      <p class="sub">Real outcomes for everyday people.</p>
+      <div class="grid3">
+        <div class="card"><p><em>"Got my Phantom wallet set up in under an hour and felt safe doing it."</em></p><p class="muted">- Client, Sacramento</p></div>
+        <div class="card"><p><em>"I was stuck for weeks. We fixed my issue in 20 minutes."</em></p><p class="muted">- Client, Davis</p></div>
+        <div class="card"><p><em>"Now I can accept crypto at my store and cash out the same day."</em></p><p class="muted">- Small Business Owner</p></div>
+      </div>
+    </section>
+
+    <section class="sec sec-dark">
+      <h2>FAQ</h2>
+      <div class="faq">
+        <details><summary>Why pay when YouTube is free?</summary><p>YouTube explains concepts. I guide you live, on your device, so you finish the setup with confidence.</p></details>
+        <details><summary>Is this investment advice?</summary><p>No. This is education and technical setup only. You keep full control of your wallet and funds.</p></details>
+        <details><summary>Do you ever hold my crypto?</summary><p>Never. I do not take custody or manage funds. You stay in control.</p></details>
+        <details><summary>Is this legal?</summary><p>Yes. You execute all transactions yourself. I do not access, control, or transmit your funds.</p></details>
+        <details><summary>What if I need help later?</summary><p>I provide follow-up notes and can book another session if needed.</p></details>
+      </div>
+    </section>
+
+    <section class="sec sec-photo3" id="contact">
+      <h2>Contact</h2>
+      <p class="sub">Call or email for a quick response.</p>
+      <div class="grid3 booking">
+        <div class="card"><h3>Wallet Starter</h3><p class="price">$99</p><a class="btn-gold" href="tel:19164082256">Call Now</a></div>
+        <div class="card"><h3>Payments Everyday</h3><p class="price">$149</p><a class="btn-gold" href="mailto:VinceDang@thenetwork20.com">Email</a></div>
+        <div class="card"><h3>DEX Pro</h3><p class="price">$249</p><a class="btn-gold" href="tel:19164082256">Call Now</a></div>
+      </div>
+      <p class="center muted">916-408-2256 or VinceDang@thenetwork20.com</p>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p><strong>CryptoNowZap</strong> | Crypto Wallet Coaching</p>
+    <p>Contact: VinceDang@thenetwork20.com | 916-408-2256</p>
+    <p style="margin-top:10px;font-size:0.9rem;">Disclaimer: Educational services only. No investment advice, no custody, no guarantees. You control your wallet and assets at all times.</p>
+  </footer>
+
+</body>
 </html>
