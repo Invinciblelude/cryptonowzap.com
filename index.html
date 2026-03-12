@@ -323,37 +323,6 @@
       background-position: center;
     }
 
-    .music-bar {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      z-index: 999;
-      background: rgba(10,10,11,0.92);
-      border-top: 1px solid rgba(241,212,138,0.25);
-      padding: 10px 20px;
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      backdrop-filter: blur(10px);
-    }
-
-    .music-bar button {
-      background: #d7b36a;
-      color: #0a0a0b;
-      border: none;
-      padding: 6px 16px;
-      border-radius: 999px;
-      font-weight: 700;
-      cursor: pointer;
-      font-size: 0.85rem;
-    }
-
-    .music-bar span {
-      color: #c2bba8;
-      font-size: 0.85rem;
-    }
-
     @media (max-width: 700px) {
       .hero-grid { grid-template-columns: 1fr; }
       .hero-btns { flex-direction: column; }
@@ -364,25 +333,6 @@
 </head>
 <body>
 
-  <div class="music-bar" id="musicBar">
-    <button id="musicBtn" onclick="toggleMusic()">♫ Pause</button>
-    <span>Baccarat Face – MD</span>
-  </div>
-  <audio id="bgMusic" loop preload="auto" src="music-short.mp3"></audio>
-  <script>
-    function toggleMusic() {
-      var a = document.getElementById('bgMusic');
-      var b = document.getElementById('musicBtn');
-      if (a.paused) { a.play(); b.textContent = '♫ Pause'; }
-      else { a.pause(); b.textContent = '♫ Play'; }
-    }
-    document.addEventListener('click', function init() {
-      var a = document.getElementById('bgMusic');
-      a.play().catch(function(){});
-      document.getElementById('musicBtn').textContent = '♫ Pause';
-      document.removeEventListener('click', init);
-    });
-  </script>
 
   <header class="hero">
     <nav class="nav">
